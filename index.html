@@ -1,667 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artem Arakelov — Game Developer & Software Engineer</title>
-  <meta name="description" content="CV of Artem Arakelov, Game Developer and Software Engineer. Skills: Unity, Godot, C#, C++, Python, Git, Game Design.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <title>Artem Arakelov — Software Engineer &amp; Game Developer</title>
+    <meta
+      name="description"
+      content="Artem Arakelov — software engineer and game developer working with C#/.NET and C++. Application architecture, complex features, networking, optimization, graphics, and tooling."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css?v=10">
 
-</head>
-<body>
- 
-<div class="controls" role="group" aria-label="Page controls">
-  <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle light/dark theme">
-    <svg id="theme-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-    Light
-  </button>
-  <button class="ctrl-btn primary" onclick="window.print()" aria-label="Save CV as PDF">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="6 9 6 2 18 2 18 9"/>
-      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-      <rect x="6" y="14" width="12" height="8"/>
-    </svg>
-    Save as PDF
-  </button>
-</div>
+    <script>
+      try {
+        const saved = localStorage.getItem('cv-theme');
+        const systemTheme = matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark';
 
-<div class="cv">
-
-  <!-- ── SIDEBAR ── -->
-  <aside class="sidebar" aria-label="Links and skills">
-
-    <div class="photo-wrap">
-      <img
-        src="avatar.jpg"
-        alt="Photo of Artem Arakelov"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      >
-      <div class="photo-fallback" aria-hidden="true">AA</div>
-    </div>
-
-    <!-- Links -->
-    <div>
-      <p class="s-label">Links</p>
-      <ul class="contact-list">
-        <li>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
-          </svg>
-          <a href="mailto:natearasti@gmail.com">natearasti@gmail.com</a>
-        </li>
-        <li>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-          <a href="https://github.com/NateArasti" target="_blank" rel="noopener">github.com/NateArasti</a>
-        </li>
-        <li>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-          </svg>
-          <a href="https://www.linkedin.com/in/natearasti/" target="_blank" rel="noopener">linkedin.com/in/natearasti</a>
-        </li>
-        <li>
-          <svg width="12" height="12" viewBox="0 0 245 255" fill="currentColor" stroke="none" aria-hidden="true" style="opacity:0.4">
-            <path d="M31.99 0C21.17 6.75 0 34.94 0 40.69v9.75c0 13.37 12.5 24.99 23.87 24.99 13.62 0 25-11.25 25-24.87 0 13.62 11.12 24.87 24.75 24.87s24.5-11.25 24.5-24.87c0 13.62 11.37 24.87 25 24.87s25-11.25 25-24.87c0 13.62 11.12 24.87 24.75 24.87s24.5-11.25 24.5-24.87c0 13.62 11.37 24.87 25 24.87 11.37 0 23.87-11.62 23.87-24.99v-9.75C245 34.94 223.83 6.75 213.01 0H31.99zM23.87 89.43C14 89.43 5 84.43 0 76.43v135.69c0 8 8.37 16.25 16.37 16.25H45v-91.25h77.5v91.25H82v16.12h126.25v-16.12H170V136.5h4.75v-10h-4.75v-1.5h4.75v-10h-4.75c0-6.25-5.75-7.12-5.75-7.12H75c-5.62.62-6.25 7.12-6.25 7.12H60v10h3v1.5h-3v10h3v91.25h-1.62C53.75 227.75 45 236 45 244v11h155.5c8 0 16.5-7.75 16.5-16.25V76.43c-5 8-14 13-23.87 13-11.12 0-21-6.37-25-15.37-4 9-13.62 15.37-24.5 15.37s-20.75-6.37-25-15.37c-4 9-13.62 15.37-24.5 15.37-11.12 0-21-6.37-25-15.37-4 9-13.37 15.37-24.25 15.37-10.87 0-20.5-6.37-24.5-15.37-4 9-13.87 15.37-25 15.37z"/>
-          </svg>
-          <a href="https://arasti.itch.io/" target="_blank" rel="noopener">arasti.itch.io</a>
-        </li>
-        <li>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
-          Kazakhstan · Open to relocation
-        </li>
-      </ul>
-    </div>
-
-    <hr>
-
-    <!-- Technical Skills -->
-    <div>
-      <p class="s-label">Skills</p>
-
-      <div class="skill-group">
-        <p class="skill-group-label">Code</p>
-        <div class="tags">
-          <span class="tag hi">C# .NET</span>
-          <span class="tag hi">C / C++</span>
-          <span class="tag hi">Shaders</span>
-          <span class="tag">Python</span>
-          <span class="tag">GDScript</span>
+        document.documentElement.dataset.theme =
+          saved === 'light' || saved === 'dark' ? saved : systemTheme;
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#experience">Skip to experience</a>
+    <div class="page">
+      <div class="topbar">
+        <p
+          class="wordmark"
+          aria-label="NateArasti, back to profile"
+          title="NateArasti"
+        >
+          NA<span aria-hidden="true">.</span>
+      </p>
+        <div class="controls" role="group" aria-label="Page controls">
+          <button
+            id="theme-btn"
+            class="icon-button"
+            type="button"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+            hidden
+          >
+            <svg
+              class="sun-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"/>
+              <path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              />
+            </svg>
+            <svg
+              class="moon-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
+            </svg>
+          </button>
+          <button id="print-btn" class="primary" type="button" hidden>
+            Save as PDF <span aria-hidden="true">↓</span>
+          </button>
         </div>
       </div>
 
-      <div class="skill-group">
-        <p class="skill-group-label">Tools</p>
-        <div class="tags">
-          <span class="tag hi">Unity</span>
-          <span class="tag hi">Godot</span>
-          <span class="tag hi">Obsidian</span>
-          <span class="tag">Notion</span>
-          <span class="tag">Blender</span>
+      <header class="hero" id="profile">
+        <div class="hero-content">
+          <div class="hero-identity">
+            <p class="eyebrow">Software engineer &amp; game developer</p>
+            <h1>Artem Arakelov</h1>
+          </div>
+          <p class="intro">I develop games, software, and tools in C#/.NET and C++.</p>
+          <p class="summary">
+            Working professionally since 2022. My experience includes software
+            architecture, feature development, networking, optimization, and graphics programming.
+          </p>
+          <p class="location">
+            Almaty, Kazakhstan <span aria-hidden="true">·</span> Open to relocation <span
+            aria-hidden="true">·</span> Remote / hybrid / on-site
+          </p>
+          <div class="contact-links" aria-label="Contact and profiles">
+            <a class="email" href="mailto:natearasti@gmail.com">natearasti@gmail.com</a>
+            <a href="https://github.com/NateArasti" target="_blank" rel="noopener noreferrer">
+              GitHub <span aria-hidden="true">↗</span><span class="print-url">:
+              github.com/NateArasti</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/natearasti/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <span aria-hidden="true">↗</span><span class="print-url">:
+              linkedin.com/in/natearasti</span>
+            </a>
+            <a href="https://arasti.itch.io/" target="_blank" rel="noopener noreferrer">
+              itch.io <span aria-hidden="true">↗</span><span class="print-url">:
+              arasti.itch.io</span>
+            </a>
+          </div>
         </div>
-      </div>
+        <img class="portrait" src="avatar.jpg" width="120" height="120" alt="Artem Arakelov">
+      </header>
 
-      <div class="skill-group">
-        <p class="skill-group-label">Expertise</p>
-        <div class="tags">
-          <span class="tag hi">Game Development</span>
-          <span class="tag hi">Software Development</span>
-          <span class="tag hi">Tooling</span>
-          <span class="tag hi">Network</span>
-          <span class="tag hi">Rendering</span>
-          <span class="tag hi">Vulkan</span>
-          <span class="tag hi">XR / VR</span>
-          <span class="tag">Git</span>
-          <span class="tag">CMake</span>
-          <span class="tag">Game Design</span>
-          <span class="tag">Multiplayer</span>
-          <span class="tag">Mobile</span>
-          <span class="tag">Optimization</span>
-          <span class="tag">TTRPGs</span>
-        </div>
-      </div>
+      <nav class="section-nav" aria-label="CV sections">
+        <a href="#experience">Experience</a>
+        <a href="#highlights">Highlight Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work Projects</a>
+        <a href="#personal">Personal projects</a>
+      </nav>
+      <main id="main">
 
-      <div class="skill-group">
-        <p class="skill-group-label">Concepts</p>
-        <div class="tags">
-          <span class="tag">SOLID</span>
-          <span class="tag">OOP</span>
-          <span class="tag">ECS</span>
-          <span class="tag">Agile</span>
-          <span class="tag">Scrum</span>
-          <span class="tag">CI/CD</span>
-        </div>
-      </div>
+        <section id="experience" aria-labelledby="experience-title">
+          <h2 class="section-title" id="experience-title">Experience</h2>
 
-      <div class="skill-group">
-        <p class="skill-group-label">Languages</p>
-        <div class="tags">
-          <span class="tag">English — B2</span>
-          <span class="tag">Russian — Native</span>
-        </div>
-      </div>
+          <article class="employment">
+            <div class="project-heading">
+              <h3>JetXR</h3>
+              <p class="date"><time datetime="2022-02">Feb 2022</time> — Present</p>
+            </div>
+            <p class="project-role">Unity Developer &amp; Software Engineer</p>
+            <p>
+              Develop applications, games, and tools with C#/.NET, Unity, and C++. Design
+              application architecture, implement features and multiplayer systems,
+              and optimize performance for constrained hardware.
+            </p>
+            <p>Working mainly on XR apps but also have lots of non-XR projects.</p>
+            <div class="project-links">
+              <a href="https://jetxr.style/" target="_blank" rel="noopener noreferrer">
+                JetXR website <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section id="highlights" aria-labelledby="highlights-title">
+          <h2 class="section-title" id="highlights-title">Highlight Projects</h2>
+
+          <article class="project featured">
+            <div class="project-heading">
+              <h3>BIMVR</h3>
+              <p class="date">Feb 2023 — Present</p>
+            </div>
+            <p class="project-role">JetXR · Primary developer</p>
+            <p>
+              An application for viewing and collaborating on building information models together. 
+              Developed the application and supporting tools and also designed vast majority of its architecture.
+            </p>
+            <ul class="contributions">
+              <li>
+                <strong>Application architecture &amp; features.</strong> 
+                <p>
+                  Developed a comprehensive system for interacting with models, 
+                  managing user interactions and moderation, as well as adding and creating user-generated content. 
+                  Designed these systems to accommodate a rapidly changing and evolving list of features
+                </p>
+              </li>
+              <li>
+                <strong>Networking &amp; performance.</strong> 
+                <p>
+                  Built custom optimized networking system to run large models on XR hardware including. 
+                  Implemented the complex model delivery system.
+                </p>
+              </li>
+              <li>
+                <strong>Model processing &amp; tooling.</strong> 
+                <p>
+                  Built a custom separate C++ model processing pipeline with processing, validation, and correction modules.
+                  Implemented several optimization flows to reduce memory usage on all ends without loss in performance.
+                </p>
+              </li>
+              <li>
+                <strong>Integration.</strong> 
+                <p>
+                  Implemented a tight backend integration with complex asset management system.
+                </p>
+              </li>
+            </ul>
+            <p class="stack">
+              C# / .NET · C++ · Unity · Networking · Optimization · XR
+            </p>
+            <div class="project-links">
+              <a
+                href="https://jetxr.style/bim-vr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="BIMVR: Project case study"
+              >
+                Project case study <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://jet.style/screen-space-vr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="BIMVR: Related project"
+              >
+                Related project <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project featured">
+            <div class="project-heading">
+              <h3>tinyrenderer</h3>
+              <p class="date">Jun 2026 — Present</p>
+            </div>
+            <p class="project-role">Personal project · Developer</p>
+            <p>
+              A C++ renderer built with Vulkan and Slang to learn graphics APIs and rendering
+              techniques.
+            </p>
+            <ul class="contributions">
+              <li>
+                Built the rendering architecture to support flexibility of 
+                a viewer with various rendering options and rendering paths.
+              </li>
+              <li>
+                Added several 3D models import support as well as Skybox.
+              </li>
+              <li>
+                Added a set of debugging and profiling functions.
+              </li>
+            </ul>
+            <p class="stack">
+              C++ · Vulkan · Slang · Dear ImGui
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/NateArasti/tinyrenderer"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="tinyrenderer: Source on GitHub"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project featured">
+            <div class="project-heading">
+              <h3>Businessman Path</h3>
+              <p class="date">Mar 2026</p>
+            </div>
+            <p class="project-role">JetXR · Team lead, game designer &amp; sole programmer</p>
+            <p>
+              Built a marketing game in one month for promotions exhibitions.
+            </p>
+            <ul class="contributions">
+              <li>
+                Did all programming and game design, and coordinated the team.
+              </li>
+              <li>
+                Worked directly with the client throughout development and adjusted game to changes in initial description.
+              </li>
+              <li>
+                Completed everything on time and met all the client’s requests.
+              </li>
+            </ul>
+            <p class="stack">
+              Godot · GDScript · Game design · Team leadership
+            </p>
+          </article>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-title">
+          <h2 class="section-title" id="skills-title">Skills &amp; tools</h2>
+          <dl class="skill-grid">
+            <div>
+              <dt>Languages</dt>
+              <dd>C# / .NET · C / C++ · Python · GDScript</dd>
+              <dd>English — B2 · Russian — native</dd>
+            </div>
+            <div>
+              <dt>Applications &amp; systems</dt>
+              <dd>
+                Software architecture, game architecture, complex feature systems, multiplayer, backend integrations
+              </dd>
+            </div>
+            <div>
+              <dt>Performance &amp; graphics</dt>
+              <dd>
+                Memory and runtime optimization, rendering, optimal and stable network code
+              </dd>
+            </div>
+            <div>
+              <dt>Engines &amp; tooling</dt>
+              <dd>Unity, Godot, Unreal, Git, CMake, SQLite, Vulkan, Slang, HLSL</dd>
+            </div>
+            <div>
+              <dt>Development practices</dt>
+              <dd>OOP, SOLID, ECS, CI/CD, Agile / Scrum</dd>
+            </div>
+            <div>
+              <dt>Design &amp; collaboration</dt>
+              <dd>Game design, team coordination, client communication</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="work" aria-labelledby="work-title">
+          <h2 class="section-title" id="work-title">Professional Projects</h2>
+          <div class="project-grid">
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>DreamboothXR</h3>
+                <p class="date">Feb 2024 — Apr 2024</p>
+              </div>
+              <p class="project-role">JetXR · Unity developer</p>
+              <p>
+                Built the architecture for branching content in an XR presentation application, and
+                supported demos and client projects.
+              </p>
+              <p class="stack">Unity · C# · XR</p>
+              <div class="project-links">
+                <a
+                  href="https://jet.style/dreamboothxr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="DreamboothXR: Project case study"
+                >
+                  Project case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Stockholm Ride</h3>
+                <p class="date">Feb 2023 — May 2023</p>
+              </div>
+              <p class="project-role">JetXR · Unity developer</p>
+              <p>
+                Integrated artist-created scenes, configured rendering and motion-chair features,
+                and implemented the ride path and external controls.
+              </p>
+              <p class="stack">Unity · C# · PC VR</p>
+              <div class="project-links">
+                <a
+                  href="https://jet.style/portfolio/stockholm-vr-ride"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Stockholm Ride: Project case study"
+                >
+                  Project case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Morpheus XR</h3>
+                <p class="date">Jul 2022 — Feb 2023</p>
+              </div>
+              <p class="project-role">JetXR · Unity developer</p>
+              <p>
+                Contributed features and architecture to a social VR platform, including porting
+                work for Windows and macOS.
+              </p>
+              <p class="stack">Unity · C# · Multiplayer</p>
+              <div class="project-links">
+                <a
+                  href="https://jet.style/portfolio/morpheus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Morpheus XR: Project case study"
+                >
+                  Project case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Scheveningen Ride</h3>
+                <p class="date">Mar 2022 — Jul 2022</p>
+              </div>
+              <p class="project-role">JetXR · Unity developer</p>
+              <p>
+                Assembled scenes and rendering, integrated motion-chair features, and set up the
+                ride path and external controls for a VR attraction.
+              </p>
+              <p class="stack">Unity · C# · PC VR</p>
+              <div class="project-links">
+                <a
+                  href="https://jet.style/portfolio/scheveningen-vr-ride"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Scheveningen Ride: Project case study"
+                >
+                  Project case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="personal" aria-labelledby="personal-title">
+          <h2 class="section-title" id="personal-title">Personal projects &amp; game jams</h2>
+          <div class="project-grid">
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Game Jams</h3>
+                <p class="date">2022 — Present</p>
+              </div>
+              <p class="project-role">Developer, game designer &amp; team coordinator</p>
+              <p>
+                Programmed and designed games, and coordinated small teams to
+                finish them within jam deadlines.
+              </p>
+              <p class="stack">Unity · C# · Game design</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/NateArasti/Rolling-The-Dice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2022 GitHub"
+                >
+                  GMTK 2022 GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://arasti.itch.io/rolling-the-dice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2022 itch.io"
+                >
+                  GMTK 2022 itch.io <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://arasti.itch.io/beatreversed"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2023 itch.io"
+                >
+                  GMTK 2023 itch.io <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://github.com/wowa-shat/GMTK-Game-Jam-2024"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2024 GitHub"
+                >
+                  GMTK 2024 GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://wowash.itch.io/task-overflow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2024 itch.io"
+                >
+                  GMTK 2024 itch.io <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://github.com/wowa-shat/GMTK-Game-Jam-2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2025 GitHub"
+                >
+                  GMTK 2025 GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://wowash.itch.io/water-cycle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2025 itch.io"
+                >
+                  GMTK 2025 itch.io <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://github.com/NateArasti/Countdown-Sequence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2026 GitHub"
+                >
+                  GMTK 2026 GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://arasti.itch.io/countdown-sequence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Game Jams: GMTK 2026 itch.io"
+                >
+                  GMTK 2026 itch.io <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Nimora</h3>
+                <p class="date">Jan 2026 — present</p>
+              </div>
+              <p class="project-role">Personal project · Game designer &amp; Game master</p>
+              <p>
+                Created a tabletop role-playing system focused on storytelling and flexible game
+                mechanics. Hold a campaign on that system to test and polish ideas. 
+                Currently, second campaign is hold by another person and me as a player.
+              </p>
+              <p class="stack">TTRPG · System design</p>
+              <div class="project-links">
+                <a
+                  href="https://natearasti.github.io/Nimora/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nimora: Project website"
+                >
+                  Project website <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://github.com/NateArasti/Nimora"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nimora: Source on GitHub"
+                >
+                  Source on GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>UnityHelpers</h3>
+                <p class="date">Jan 2026</p>
+              </div>
+              <p class="project-role">Personal project · Solo developer</p>
+              <p>Collected my frequently used Unity extensions into reusable helper packages.</p>
+              <p class="stack">Unity · C# · Tooling</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/NateArasti/UnityHelpers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="UnityHelpers: Source on GitHub"
+                >
+                  Source on GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>PadProject</h3>
+                <p class="date">Mar 2025 — Jul 2025</p>
+              </div>
+              <p class="project-role">Personal project · Solo developer</p>
+              <p>
+                A project-anthology about creating platform that combines several solo and multiplayer games. 
+                Used it to learn peer-to-peer networking and how to run different games within one application.
+                Also researched possibilities of user created games and how they can be shared.
+              </p>
+              <p class="stack">Unity · C# · Multiplayer</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/NateArasti/PadProject"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="PadProject: Source on GitHub"
+                >
+                  Source on GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>RenderFeatures</h3>
+                <p class="date">Aug 2023</p>
+              </div>
+              <p class="project-role">Personal project · Solo developer</p>
+              <p>
+                A learning project for shader effects and Unity’s Render Features
+                workflow.
+              </p>
+              <p class="stack">Unity · C# · Shaders</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/NateArasti/RenderFeatures"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="RenderFeatures: Source on GitHub"
+                >
+                  Source on GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://arasti.itch.io/render-features"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="RenderFeatures: View demo on itch.io"
+                >
+                  View demo on itch.io <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>blow up</h3>
+                <p class="date">Aug 2021</p>
+              </div>
+              <p class="project-role">Personal project · Solo developer</p>
+              <p>
+                Built and published a mobile game in under a month. 
+                Game's single mechanic is using explosions to move a ball.
+                My first completed and published game.
+              </p>
+              <p class="stack">Unity · C# · Mobile</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/NateArasti/blow-up"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="blow up: Source on GitHub"
+                >
+                  Source on GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://arasti.itch.io/blow-up"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="blow up: Play on itch.io"
+                >
+                  Play on itch.io <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="background" aria-label="Education, languages, and interests">
+          <div>
+            <h2 class="section-title">Education</h2>
+            <h3>Ural Federal University</h3>
+            <p>Bachelor’s degree in Computer and Information Sciences</p>
+            <p class="muted">2020 — 2024 · Yekaterinburg, Russia</p>
+          </div>
+          <div>
+            <h2 class="section-title">Interests</h2>
+            <p class="muted">
+              Game development, game jams, low-level engineering, TTRPGs, gaming, and sports.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Artem Arakelov · Software engineer &amp; game developer</p>
+        <a href="mailto:natearasti@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </footer>
     </div>
 
-    <hr>
+    <script>
+      const themeButton = document.getElementById('theme-btn');
+      const printButton = document.getElementById('print-btn');
 
-    <div>
-      <p class="s-label">Work Format</p>
-      <div class="tags">
-        <span class="avail-pill">On-site</span>
-        <span class="avail-pill">Remote</span>
-        <span class="avail-pill">Hybrid</span>
-      </div>
-    </div>
+      function updateThemeButton() {
+        const light = document.documentElement.dataset.theme === 'light';
+        const label = light ? 'Switch to dark theme' : 'Switch to light theme';
+        themeButton.setAttribute('aria-label', label);
+        themeButton.title = label;
+      }
 
-    <hr>
+      themeButton.hidden = false;
+      printButton.hidden = false;
+      updateThemeButton();
 
-    <div class="not-divided">
-      <p class="s-label">Education</p>
-      <div class="edu-item">
-        <p class="edu-name">Ural Federal University</p>
-        <p class="edu-degree">Bachelor's Degree — Computer and Information Sciences</p>
-        <p class="edu-years">2020 — 2024 · Yekaterinburg, Russia</p>
-      </div>
-    </div>
+      themeButton.addEventListener('click', () => {
+        const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+        try {
+          localStorage.setItem('cv-theme', theme);
+        } catch (_) {}
+        updateThemeButton();
+      });
 
-    <hr>
-
-    <div>
-      <p class="s-label">Interests</p>
-      <div class="tags">
-        <span class="tag hi">Game Development</span>
-        <span class="tag">Game Jams</span>
-        <span class="tag">TTRPGs</span>
-        <span class="tag">Low-Level Engineering</span>
-        <span class="tag">Gaming</span>
-        <span class="tag">Sports</span>
-      </div>
-    </div>
-
-  </aside>
-
-  <!-- ── MAIN ── -->
-  <main class="main">
-
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Artem Arakelov</h1>
-      <p class="hero-role">Game Developer &amp; Software Engineer</p>
-      <div class="hero-meta" aria-label="Personal details">
-        <span>24 years old</span>
-        <span>Almaty, Kazakhstan</span>
-        <span>Ready to relocate</span>
-      </div>
-    </header>
- 
-    <!-- Work Experience -->
-    <section aria-label="Work experience">
-      <p class="sec-title">Work Experience</p>
-      <div class="timeline">
- 
-        <article class="tl-item active">
-          <div class="tl-header">
-            <h2 class="tl-title">JetXR</h2>
-            <span class="tl-date">Feb 2022 — Present</span>
-          </div>
-          <p class="tl-role">Unity Developer &amp; Software Engineer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Software Development</span>
-            <span class="tag">C# .NET</span>
-            <span class="tag">C / C++</span>
-            <span class="tag">Unity</span>
-            <span class="tag">XR / VR</span>
-            <span class="tag">Network</span>
-            <span class="tag">Multiplayer</span>
-            <span class="tag">Mobile</span>
-            <span class="tag">Optimization</span>
-            <span class="tag">Git</span>
-            <span class="tag">Agile</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jetxr.style/" target="_blank" rel="noopener">
-              ↗ Site
-            </a>
-          </div>
-          <p class="tl-desc">
-            I primarily work as a Unity developer, handling a wide range of tasks: 
-            developing cutting-edge arcade experiences, 
-            creating large-scale multiplayer experiences, 
-            and working on and optimizing projects that push the limits of various platforms.
-          </p>
-        </article>
- 
-      </div>
-    </section>
- 
-    <!-- Projects -->
-    <section aria-label="Projects">
-      <p class="sec-title">Projects</p>
-      <div class="timeline">
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">BIMVR</h2>
-            <span class="tl-date">Feb 2023 — Present</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Main Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Software Development</span>
-            <span class="tag">Software Integration</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C# .NET</span>
-            <span class="tag">C / C++</span>
-            <span class="tag">XR</span>
-            <span class="tag">Mobile</span>
-            <span class="tag">Network</span>
-            <span class="tag">Multiplayer</span>
-            <span class="tag">Optimization</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jetxr.style/bim-vr" target="_blank" rel="noopener">
-              ↗ Case
-            </a>
-            <a class="tl-link" href="https://jet.style/screen-space-vr" target="_blank" rel="noopener">
-              ↗ Spin-Off
-            </a>
-          </div>
-          <p class="tl-desc">
-            As the main developer, 
-            I built most of the architecture for the Unity client and server sides, 
-            created several additional internal service applications for low-level work with BIM models, 
-            and worked on integrations for different third-party applications. 
-            Due to the heavy load imposed by large, high-precision models, 
-            the project required significant low-level optimizations ranging from the rendering to the network code.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">tinyrenderer</h2>
-            <span class="tl-date">June 2026 - Present</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Software Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Software Development</span>
-            <span class="tag">C++</span>
-            <span class="tag">Rendering</span>
-            <span class="tag">Tool</span>
-            <span class="tag">Slang</span>
-            <span class="tag">Vulkan</span>
-            <span class="tag">ImGUI</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/tinyrenderer" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-          </div>
-          <p class="tl-desc">
-            A small renderer for learning graphics APIs and rendering techniques written in C++ with Vulkan and Slang.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Game Jams</h2>
-            <span class="tl-date">2022 — Present</span>
-          </div>
-          <p class="tl-role">Developer &amp; Game Designer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Game Design</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/Rolling-The-Dice" target="_blank" rel="noopener">
-              ↗ GMTK 2022 GitHub
-            </a>
-            <a class="tl-link" href="https://arasti.itch.io/rolling-the-dice" target="_blank" rel="noopener">
-              ↗ GMTK 2022 itch.io
-            </a>
-            <a class="tl-link" href="https://arasti.itch.io/beatreversed" target="_blank" rel="noopener">
-              ↗ GMTK 2023 itch.io
-            </a>
-            <a class="tl-link" href="https://github.com/wowa-shat/GMTK-Game-Jam-2024" target="_blank" rel="noopener">
-              ↗ GMTK 2024 GitHub
-            </a>
-            <a class="tl-link" href="https://wowash.itch.io/task-overflow" target="_blank" rel="noopener">
-              ↗ GMTK 2024 itch.io
-            </a>
-            <a class="tl-link" href="https://github.com/wowa-shat/GMTK-Game-Jam-2025" target="_blank" rel="noopener">
-              ↗ GMTK 2025 GitHub
-            </a>
-            <a class="tl-link" href="https://wowash.itch.io/water-cycle" target="_blank" rel="noopener">
-              ↗ GMTK 2025 itch.io
-            </a>
-            <a class="tl-link" href="https://github.com/NateArasti/Countdown-Sequence" target="_blank" rel="noopener">
-              ↗ GMTK 2026 GitHub
-            </a>
-            <a class="tl-link" href="https://arasti.itch.io/countdown-sequence" target="_blank" rel="noopener">
-              ↗ GMTK 2026 itch.io
-            </a>
-          </div>
-          <p class="tl-desc">
-            I've participated in several game jams over the past few years. I decided to combine them to save space.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Nimora</h2>
-            <span class="tl-date">Jan 2026 - July 2026</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Game Designer & Game Master</p>
-          <div class="tl-skills">
-            <span class="tag">Game Design</span>
-            <span class="tag">TTRPG</span>
-            <span class="tag">TTRPG System Design</span>
-            <span class="tag">Game Master</span>
-            <span class="tag">CI/CD</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://natearasti.github.io/Nimora/" target="_blank" rel="noopener">
-              ↗ Site
-            </a>
-            <a class="tl-link" href="https://github.com/NateArasti/Nimora" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-          </div>
-          <p class="tl-desc">
-            For educational purposes (and also because my friends and I had grown tired of D&D)
-            I decided to create my own simple tabletop role-playing game system that focuses primarily on storytelling 
-            and takes a more flexible approach to game mechanics.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Businessman Path</h2>
-            <span class="tl-date">March 2026</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Team Lead &amp; Main Developer &amp; Game Designer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Godot</span>
-            <span class="tag">GDScript</span>
-            <span class="tag">Game Design</span>
-          </div>
-          <p class="tl-desc">
-            Over the course of a month, with a small team, 
-            we managed to create a small game that served as a custom promotional tool for a large company. 
-            I served as the team lead, game designer, and sole developer.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">UnityHelpers</h2>
-            <span class="tl-date">Jan 2026</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Solo Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Tooling</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/UnityHelpers" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-          </div>
-          <p class="tl-desc">
-            A collection of small, specialized helper packages for Unity. 
-            A small side project aimed at centralizing all the extensions I use. 
-            It is a “remake” of a similar, but older, project of mine.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">PadProject</h2>
-            <span class="tl-date">Mar 2025 - July 2025</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Solo Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Game Design</span>
-            <span class="tag">Network</span>
-            <span class="tag">Multiplayer</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/PadProject" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-          </div>
-          <p class="tl-desc">
-            PadProject was based on the idea of an all-in-one game 
-            with multiple small games that you can play by yourself or with your friends. 
-            It was also a learning project about P2P networking and game-in-game architecture.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">DreamboothXR</h2>
-            <span class="tl-date">Feb 2024 - Apr 2024</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Unity Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Software Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Mobile</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jet.style/dreamboothxr" target="_blank" rel="noopener">
-              ↗ Case
-            </a>
-          </div>
-          <p class="tl-desc">
-            An XR presentation environment. 
-            I created a basic architecture for future content branching 
-            and provided technical support for all demos and custom projects for various companies.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">RenderFeatures</h2>
-            <span class="tl-date">August 2023</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Solo Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Shaders</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/RenderFeatures" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-            <a class="tl-link" href="https://arasti.itch.io/render-features" target="_blank" rel="noopener">
-              ↗ itch.io
-            </a>
-          </div>
-          <p class="tl-desc">
-            Small learning project. Main purpose was to dig deeper in shader and effects knowledge 
-            and to learn Unity Render Features workflow.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Stockholm Ride</h2>
-            <span class="tl-date">Feb 2023 - May 2023</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Unity Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">PC VR</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jet.style/portfolio/stockholm-vr-ride" target="_blank" rel="noopener">
-              ↗ Case
-            </a>
-          </div>
-          <p class="tl-desc">
-            VR Ride about Stockholm City.
-            As a Unity developer, 
-            I had to collect all the scenes from the artists, 
-            set up the rendering, 
-            configure and add features for the immersive chair, 
-            and set up the overall path and external ride controls.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Morpheus XR</h2>
-            <span class="tl-date">July 2022 - Feb 2023</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Unity Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Software Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Multiplayer</span>
-            <span class="tag">Mobile</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jet.style/portfolio/morpheus" target="_blank" rel="noopener">
-              ↗ Case
-            </a>
-          </div>
-          <p class="tl-desc">
-            Morpheus is a VR platform for human connection in the remote environment.
-            As a developer I worked on Windows, Mac porting, 
-            developed and added several features,
-            worked on overall architecture.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">Scheveningen Ride</h2>
-            <span class="tl-date">Mar 2022 - Jul 2022</span>
-          </div>
-          <p class="tl-place">JetXR</p>
-          <p class="tl-role">Unity Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">PC VR</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://jet.style/portfolio/scheveningen-vr-ride" target="_blank" rel="noopener">
-              ↗ Case
-            </a>
-          </div>
-          <p class="tl-desc">
-            VR Ride about Scheveningen City.
-            As a Unity developer, 
-            I had to collect all the scenes from the artists, 
-            set up the rendering, 
-            configure and add features for the immersive chair, 
-            and set up the overall path and external ride controls.
-          </p>
-        </article>
- 
-        <article class="tl-item">
-          <div class="tl-header">
-            <h2 class="tl-title">blow up</h2>
-            <span class="tl-date">August 2021</span>
-          </div>
-          <p class="tl-place">Pet Project</p>
-          <p class="tl-role">Solo Developer</p>
-          <div class="tl-skills">
-            <span class="tag">Game Development</span>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Game Design</span>
-            <span class="tag">Mobile</span>
-          </div>
-          <div class="tl-links">
-            <a class="tl-link" href="https://github.com/NateArasti/blow-up" target="_blank" rel="noopener">
-              ↗ GitHub
-            </a>
-            <a class="tl-link" href="https://arasti.itch.io/blow-up" target="_blank" rel="noopener">
-              ↗ itch.io
-            </a>
-          </div>
-          <p class="tl-desc">
-            My first completed and published project. 
-            Mobile game made in under a month with easy-to-learn hard-to-master mechanic – creating explosions to move a ball.
-          </p>
-        </article>
- 
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<!--
-  ATS keyword layer — invisible to human readers, readable by text parsers.
-  Contains role-relevant terms that may not appear verbatim in visible content.
--->
-<div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;font-size:1px;color:transparent;">
-  Unity, Unity3D, Unity developer, game developer, software engineer, C sharp, C#, dotnet,
-  C plus plus, gameplay programmer, XR developer, VR developer, virtual reality, augmented reality,
-  mixed reality, extended reality, mobile game development, Android, iOS, BIM, building information modeling,
-  multiplayer, networking, P2P networking, peer to peer, shader programming, HLSL, URP,
-  Unity Render Pipeline, Godot, GDScript, game jam, team lead, technical lead, software architecture,
-  ECS, entity component system, SOLID, OOP, object oriented programming, design patterns,
-  version control, GitHub, Git, agile, scrum, Kazakhstan, Almaty, open source
-</div>
- 
-<script>
-  const STORAGE_KEY = 'cv-theme';
-  const btn = document.getElementById('theme-btn');
-  const icon = document.getElementById('theme-icon');
- 
-  const MOON_PATH = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-  const SUN_PATH  = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
- 
-  function applyTheme(isLight) {
-    document.body.classList.toggle('light', isLight);
-    icon.innerHTML = isLight ? MOON_PATH : SUN_PATH;
-    btn.lastChild.textContent = isLight ? ' Dark' : ' Light';
-  }
- 
-  function toggleTheme() {
-    const isLight = !document.body.classList.contains('light');
-    localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark');
-    applyTheme(isLight);
-  }
- 
-  // Restore saved preference on load
-  applyTheme(localStorage.getItem(STORAGE_KEY) === 'light');
-</script>
-
-</body>
+      printButton.addEventListener('click', () => window.print());
+    </script>
+  </body>
 </html>
