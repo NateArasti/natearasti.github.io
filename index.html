@@ -9,13 +9,14 @@
       name="description"
       content="Artem Arakelov — software engineer and game developer working with C#/.NET and C++. Application architecture, complex features, networking, optimization, graphics, and tooling."
     >
+    <link rel="icon" type="image/png" href="site_icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=11">
 
     <script>
       try {
@@ -224,6 +225,57 @@
 
           <article class="project featured">
             <div class="project-heading">
+              <h3>num.seq</h3>
+            </div>
+            <p class="project-role">Personal project · Solo developer</p>
+            <p>
+              Independently developed and published a mobile number puzzle game,
+              covering the whole game development process from core generation system and gameplay to
+              monetization integration and publishing.
+            </p>
+            <ul class="contributions">
+              <li>
+                <strong>Puzzle generation.</strong>
+                Designed and implemented a custom C++ puzzle generation system,
+                integrated with Godot through GDExtension. The system guarantees
+                each generated puzzle has a solution, supports different difficulty settings
+                and accommodates lots of different rules and special tiles.
+              </li>
+              <li>
+                <strong>Game development.</strong>
+                Implemented gameplay, UI, and animations in GDScript, including
+                procedural animations, rule-wise selection and save system.
+              </li>
+              <li>
+                <strong>Monetization &amp; publishing.</strong>
+                Integrated AdMob and handled mobile store publishing, with the
+                game released on Google Play and an App Store release coming soon.
+              </li>
+            </ul>
+            <p class="stack">Godot · C++ / GDExtension · GDScript · Procedural generation · Mobile</p>
+            <div class="project-links">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.natearasti.numseq"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="num.seq: Play Store"
+              >
+                Play Store <span aria-hidden="true">↗</span>
+              </a>
+              <span class="unavailable" aria-disabled="true">App Store · Coming soon</span>
+              <a
+                href="https://arasti.itch.io/numseq"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="num.seq: Play on the web"
+              >
+                Web <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project featured">
+            <div class="project-heading">
               <h3>tinyrenderer</h3>
               <p class="date">Jun 2026 — Present</p>
             </div>
@@ -234,14 +286,13 @@
             </p>
             <ul class="contributions">
               <li>
-                Built the rendering architecture to support flexibility of 
-                a viewer with various rendering options and rendering paths.
+                Built the flexible rendering architecture via render graph with different rendering paths.
               </li>
               <li>
-                Added several 3D models import support as well as Skybox.
+                Researched and implemented a handful of different rendering techniques.
               </li>
               <li>
-                Added a set of debugging and profiling functions.
+                Added several 3D models import support.
               </li>
             </ul>
             <p class="stack">
@@ -257,31 +308,6 @@
                 GitHub <span aria-hidden="true">↗</span>
               </a>
             </div>
-          </article>
-
-          <article class="project featured">
-            <div class="project-heading">
-              <h3>Businessman Path</h3>
-              <p class="date">Mar 2026</p>
-            </div>
-            <p class="project-role">JetXR · Team lead, game designer &amp; sole programmer</p>
-            <p>
-              Built a marketing game in one month for promotions exhibitions.
-            </p>
-            <ul class="contributions">
-              <li>
-                Did all programming and game design, and coordinated the team.
-              </li>
-              <li>
-                Worked directly with the client throughout development and adjusted game to changes in initial description.
-              </li>
-              <li>
-                Completed everything on time and met all the client’s requests.
-              </li>
-            </ul>
-            <p class="stack">
-              Godot · GDScript · Game design · Team leadership
-            </p>
           </article>
         </section>
 
@@ -321,8 +347,33 @@
         </section>
 
         <section id="work" aria-labelledby="work-title">
-          <h2 class="section-title" id="work-title">Professional Projects</h2>
+          <h2 class="section-title" id="work-title">Work Projects</h2>
           <div class="project-grid">
+
+            <article class="project">
+              <div class="project-heading">
+                <h3>Businessman Path</h3>
+                <p class="date">Mar 2026</p>
+              </div>
+              <p class="project-role">JetXR · Team lead, game designer &amp; sole programmer</p>
+              <p>
+                Built a marketing game in one month for promotions exhibitions.
+              </p>
+              <ul class="contributions">
+                <li>
+                  Did all programming and game design, and coordinated the team.
+                </li>
+                <li>
+                  Worked directly with the client throughout development and adjusted game to changes in initial description.
+                </li>
+                <li>
+                  Completed everything on time and met all the client’s requests.
+                </li>
+              </ul>
+              <p class="stack">
+                Godot · GDScript · Game design · Team leadership
+              </p>
+            </article>
 
             <article class="project">
               <div class="project-heading">
@@ -419,7 +470,7 @@
         </section>
 
         <section id="personal" aria-labelledby="personal-title">
-          <h2 class="section-title" id="personal-title">Personal projects &amp; game jams</h2>
+          <h2 class="section-title" id="personal-title">Personal projects</h2>
           <div class="project-grid">
 
             <article class="project">

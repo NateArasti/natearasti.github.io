@@ -312,7 +312,8 @@ h3 {
   font-size: 13px;
 }
 
-.project-links a {
+.project-links a,
+.project-links .unavailable {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -322,6 +323,10 @@ h3 {
   border-radius: 4px;
   background: var(--bg);
   text-decoration: none;
+}
+
+.project-links .unavailable {
+  color: var(--muted);
 }
 
 .project-links a:hover {
@@ -706,7 +711,8 @@ footer {
     gap: 4pt 6pt;
   }
 
-  .project-links a {
+  .project-links a,
+.project-links .unavailable {
     min-height: 0;
     padding: 4pt 8pt;
     background: var(--surface);
