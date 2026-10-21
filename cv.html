@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>Artem Arakelov — CV</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #202c33;
+        background: #e8ecee;
+        font-size: 10.5pt;
+        line-height: 1.42;
+        --accent: #23624f;
+        --muted: #52616a;
+        --rule: #d3dcda;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      h1, h2, h3, p, dl, dd { margin: 0; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+      .toolbar {
+        width: 210mm;
+        margin: 20px auto 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      button {
+        padding: 9px 16px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--accent);
+        color: #fff;
+        font: 600 13px Arial, sans-serif;
+        cursor: pointer;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto 20px;
+        padding: 14mm 16mm 11mm;
+        background: #fff;
+        box-shadow: 0 3px 20px #22332b14;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1 {
+        color: #172a29;
+        font-size: 29pt;
+        line-height: 1.1;
+        letter-spacing: -.8px;
+      }
+
+      .title { margin-top: 5px; color: var(--accent); font-size: 12pt; font-weight: 600; }
+      .location { margin-top: 9px; font-size: 9.5pt; color: var(--muted); }
+      .contacts { display: flex; flex-wrap: wrap; gap: 3px 16px; margin-top: 5px; font-size: 9pt; }
+      .summary { margin-top: 13px; }
+
+      section { margin-top: 6mm; }
+      h2 {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--rule);
+        color: var(--accent);
+        font-size: 10pt;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+
+      h3 { color: #172a29; font-size: 12pt; line-height: 1.3; }
+      .heading { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; }
+      .date { flex-shrink: 0; color: var(--muted); font-size: 9pt; }
+      .role { margin: 3px 0 7px; color: var(--muted); font-size: 9.5pt; }
+      article + article { margin-top: 17px; }
+      ul { margin: 7px 0 0; padding-left: 17px; }
+      li { padding-left: 2px; }
+      li + li { margin-top: 5px; }
+      li::marker { color: var(--accent); }
+      .stack { margin-top: 8px; color: var(--muted); font-size: 9pt; }
+      .links { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 9pt; }
+      .links a {
+        padding: 3px 9px;
+        border: 1px solid var(--accent);
+        border-radius: 3px;
+        font-weight: 700;
+      }
+
+      .skills { display: grid; grid-template-columns: 88px 1fr; gap: 5px 12px; font-size: 10pt; }
+      dt { font-weight: 700; }
+      .continued { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+      .continued p:first-child { font-size: 12pt; font-weight: 700; color: #172a29; }
+      .continued p:last-child { font-size: 9pt; color: var(--muted); }
+      .education p { margin-top: 4px; }
+      .languages { margin-top: 9px; color: var(--muted); font-size: 10pt; }
+
+      footer {
+        margin-top: auto;
+        padding-top: 10mm;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 8pt;
+      }
+
+      @page { size: A4; margin: 0; }
+
+      @media print {
+        :root { background: #fff; }
+        .toolbar { display: none; }
+        .sheet {
+          margin: 0;
+          min-height: 296mm;
+          box-shadow: none;
+          break-after: page;
+        }
+        .sheet:last-child { break-after: auto; }
+        article, .education { break-inside: avoid; }
+        h2, .heading, .role { break-after: avoid; }
+        p, li { orphans: 2; widows: 2; }
+      }
+
+      @media screen and (max-width: 820px) {
+        .toolbar { width: auto; margin: 14px 18px; }
+        .sheet { width: 100%; min-height: auto; padding: 28px 22px; margin-bottom: 12px; }
+        h1 { font-size: 26pt; }
+        .heading { flex-wrap: wrap; gap: 2px 12px; }
+        .continued { gap: 12px; }
+        .continued p:last-child { text-align: right; }
+        .skills { grid-template-columns: 75px 1fr; }
+        footer { padding-top: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <span>2 pages · A4</span>
+      <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <main>
+      <div class="sheet" aria-label="Page 1 of 2">
+        <header>
+          <h1>Artem Arakelov</h1>
+          <p class="title">Software Engineer &amp; Game Developer</p>
+          <p class="location">Almaty, Kazakhstan · Open to relocation · Remote / hybrid / on-site</p>
+          <div class="contacts" aria-label="Contact and profiles">
+            <a href="mailto:natearasti@gmail.com">natearasti@gmail.com</a>
+            <a href="https://github.com/NateArasti">github.com/NateArasti</a>
+            <a href="https://www.linkedin.com/in/natearasti/">linkedin.com/in/natearasti</a>
+            <a href="https://natearasti.github.io/">Full site ↗</a>
+          </div>
+          <p class="summary">
+            Software engineer with 4+ years of professional experience building XR applications,
+            multiplayer systems, and 3D tooling in C#/.NET and C++. Focused on application architecture,
+            networking, and performance on constrained hardware.
+          </p>
+        </header>
+
+        <section aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <dl class="skills">
+            <dt>Languages</dt>
+            <dd>C# / .NET, C / C++, GDScript, Python</dd>
+            <dt>Engines &amp; tools</dt>
+            <dd>Unity, Godot, Git, CMake, SQLite; working knowledge of Vulkan, Slang, HLSL</dd>
+            <dt>Engineering</dt>
+            <dd>Application and game architecture, multiplayer (Mirror, custom TCP), REST APIs,
+              memory and runtime optimization, real-time rendering, code review, CI/CD</dd>
+          </dl>
+        </section>
+
+        <section aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+          <article>
+            <div class="heading">
+              <h3>JetXR</h3>
+              <p class="date">Feb 2022 — Present</p>
+            </div>
+            <p class="role">Unity Developer &amp; Software Engineer</p>
+            <ul>
+              <li>Progressed from intern to mid-level engineer; shipped 10+ XR and non-XR projects for standalone headsets and PC.</li>
+              <li>Design application architecture, build complex features and multiplayer systems, and optimize for constrained hardware.</li>
+              <li>Review code for most of a 5–6 person Unity team; helped define code review rules and AI-assisted workflow guidelines.</li>
+            </ul>
+            <p class="links"><a href="https://jetxr.style/">JetXR website ↗</a></p>
+          </article>
+        </section>
+
+        <section aria-labelledby="selected-work-title">
+          <h2 id="selected-work-title">Selected work at JetXR</h2>
+          <article>
+            <div class="heading">
+              <h3>BIMVR</h3>
+              <p class="date">Feb 2023 — Present</p>
+            </div>
+            <p class="role">Primary developer in a team of 1–3 · Standalone Meta Quest &amp; Pico</p>
+            <p>Multi-user XR application for viewing and collaborating on building information models, used by real clients.</p>
+            <ul>
+              <li>Designed most of the architecture, including model interaction, user management, moderation, and user-generated content; supports up to 20 users per session.</li>
+              <li>Built networking with Mirror and custom TCP streaming to deliver models of up to tens of millions of polygons to standalone headsets.</li>
+              <li>Built a C++ conversion pipeline for IFC, GLB, FBX, and OBJ, with model processing, validation, correction, and memory optimization on client and server.</li>
+              <li>Integrated the client with the asset management backend through its REST API.</li>
+            </ul>
+            <p class="stack">C# / .NET · C++ · Unity · Mirror · TCP · XR</p>
+            <p class="links"><a href="https://jetxr.style/bim-vr">BIMVR case study ↗</a></p>
+          </article>
+
+        </section>
+
+        <footer><span>Artem Arakelov · CV</span><span>1 / 2</span></footer>
+      </div>
+
+      <div class="sheet" aria-label="Page 2 of 2">
+        <div class="continued">
+          <p>Artem Arakelov</p>
+          <p>Software Engineer &amp; Game Developer</p>
+        </div>
+
+        <section aria-labelledby="personal-title">
+          <h2 id="personal-title">Selected personal projects</h2>
+          <article>
+            <div class="heading">
+              <h3>num.seq</h3>
+              <p class="date">Aug 2026 — Present</p>
+            </div>
+            <p class="role">Solo developer · Published mobile number puzzle game</p>
+            <ul>
+              <li>Developed the game from puzzle generation and gameplay through monetization and Google Play publishing.</li>
+              <li>Built a C++ puzzle generator integrated with Godot through GDExtension. Reverse construction with a solution proof and fallback mechanics guarantees solvable boards, generated in under 30 ms on average.</li>
+              <li>Implemented multiple difficulty settings and 7 special tile types with distinct generation rules.</li>
+              <li>Built gameplay, UI, procedural animations, rule-based selection, and a save system in GDScript; integrated AdMob.</li>
+            </ul>
+            <p class="stack">Godot · C++ / GDExtension · GDScript · Procedural generation · Mobile</p>
+            <div class="links">
+              <a href="https://play.google.com/store/apps/details?id=com.natearasti.numseq">Google Play ↗</a>
+              <a href="https://arasti.itch.io/numseq">Play on the web ↗</a>
+            </div>
+          </article>
+
+          <article>
+            <div class="heading">
+              <h3>tinyrenderer</h3>
+              <p class="date">Jun 2026 — Present</p>
+            </div>
+            <p class="role">Solo developer · C++ renderer</p>
+            <ul>
+              <li>Built a renderer with Vulkan and Slang to explore graphics APIs and rendering techniques.</li>
+              <li>Implemented a render graph with automatic resource transitions and acquisition, supporting multiple rendering paths.</li>
+              <li>Added PBR shading, image-based lighting, shadow mapping, tone mapping, and GLB, FBX, and OBJ import.</li>
+            </ul>
+            <p class="stack">C++ · Vulkan · Slang · Dear ImGui</p>
+            <p class="links"><a href="https://github.com/NateArasti/tinyrenderer">GitHub ↗</a></p>
+          </article>
+        </section>
+
+        <section aria-labelledby="additional-title">
+          <h2 id="additional-title">Team leadership at JetXR</h2>
+          <article>
+            <div class="heading">
+              <h3>Businessman Path</h3>
+              <p class="date">Mar 2026</p>
+            </div>
+            <p class="role">Team lead, game designer &amp; sole developer</p>
+            <p>Built a Windows exhibition game in one month, played by hundreds of visitors.</p>
+            <ul>
+              <li>Handled all programming and game design, and coordinated a team of 6.</li>
+              <li>Worked directly with the client, adapted to brief changes, and delivered on time.</li>
+            </ul>
+            <p class="stack">Godot · GDScript · Game design · Team coordination</p>
+          </article>
+        </section>
+
+        <section class="education" aria-labelledby="education-title">
+          <h2 id="education-title">Education &amp; languages</h2>
+          <div class="heading">
+            <h3>Ural Federal University</h3>
+            <p class="date">2020 — 2024</p>
+          </div>
+          <p>Bachelor’s degree in Computer and Information Sciences</p>
+          <p class="languages">English — B2 · Russian — native</p>
+        </section>
+
+        <footer><a href="mailto:natearasti@gmail.com">natearasti@gmail.com</a><span>2 / 2</span></footer>
+      </div>
+    </main>
+  </body>
+</html>

@@ -95,8 +95,9 @@
           </div>
           <p class="intro">I develop games, software, and tools in C#/.NET and C++.</p>
           <p class="summary">
-            Working professionally since 2022. My experience includes software
-            architecture, feature development, networking, optimization, and graphics programming.
+            Software engineer with 4+ years of professional experience building XR applications,
+            multiplayer systems, and 3D tooling for standalone headsets. Focused on application
+            architecture, networking, and performance on constrained hardware.
           </p>
           <p class="location">
             Almaty, Kazakhstan <span aria-hidden="true">·</span> Open to relocation <span
@@ -144,11 +145,16 @@
             </div>
             <p class="project-role">Unity Developer &amp; Software Engineer</p>
             <p>
-              Develop applications, games, and tools with C#/.NET, Unity, and C++. Design
+              Started as an intern and grew to a mid-level engineer. Develop XR applications, games,
+              and tools with C#/.NET, Unity, and C++ for standalone headsets and PC. Design
               application architecture, implement features and multiplayer systems,
               and optimize performance for constrained hardware.
             </p>
-            <p>Working mainly on XR apps but also have lots of non-XR projects.</p>
+            <p>
+              Shipped 10+ projects, mostly XR plus a number of non-XR ones. Review code for most of
+              the 5–6 person Unity team and helped shape its code review rules and AI-assisted
+              workflow guidelines.
+            </p>
             <div class="project-links">
               <a href="https://jetxr.style/" target="_blank" rel="noopener noreferrer">
                 JetXR website <span aria-hidden="true">↗</span>
@@ -165,43 +171,46 @@
               <h3>BIMVR</h3>
               <p class="date">Feb 2023 — Present</p>
             </div>
-            <p class="project-role">JetXR · Primary developer</p>
+            <p class="project-role">JetXR · Developer</p>
             <p>
-              An application for viewing and collaborating on building information models together. 
-              Developed the application and supporting tools and also designed vast majority of its architecture.
+              A multi-user XR application for viewing and collaborating on building information models
+              on standalone Meta Quest and Pico, used by real clients.
+              Primary developer in a team of 1–3, designed the majority of its architecture.
             </p>
             <ul class="contributions">
               <li>
                 <strong>Application architecture &amp; features.</strong> 
                 <p>
-                  Developed a comprehensive system for interacting with models, 
-                  managing user interactions and moderation, as well as adding and creating user-generated content. 
-                  Designed these systems to accommodate a rapidly changing and evolving list of features
+                  Designed the architecture for model interaction, user management and moderation,
+                  and user-generated content creation, built to accommodate a rapidly evolving
+                  feature set. Supports sessions of up to 20 users.
                 </p>
               </li>
               <li>
                 <strong>Networking &amp; performance.</strong> 
                 <p>
-                  Built custom optimized networking system to run large models on XR hardware including. 
-                  Implemented the complex model delivery system.
+                  Built the networking layer on Mirror and custom TCP streaming to deliver models of up
+                  to tens of millions of polygons, from a single house to a 10 km port,
+                  to standalone headsets.
                 </p>
               </li>
               <li>
                 <strong>Model processing &amp; tooling.</strong> 
                 <p>
-                  Built a custom separate C++ model processing pipeline with processing, validation, and correction modules.
-                  Implemented several optimization flows to reduce memory usage on all ends without loss in performance.
+                  Built a standalone C++ conversion pipeline with processing, validation, and correction
+                  modules. It prepares IFC, GLB, FBX, and OBJ models for XR hardware, with optimization
+                  flows that reduce memory usage on both client and server without losing performance.
                 </p>
               </li>
               <li>
                 <strong>Integration.</strong> 
                 <p>
-                  Implemented a tight backend integration with complex asset management system.
+                  Integrated the client with the asset management backend through its REST API.
                 </p>
               </li>
             </ul>
             <p class="stack">
-              C# / .NET · C++ · Unity · Networking · Optimization · XR
+              C# / .NET · C++ · Unity · Mirror · TCP · IFC · Optimization · XR
             </p>
             <div class="project-links">
               <a
@@ -226,8 +235,9 @@
           <article class="project featured">
             <div class="project-heading">
               <h3>num.seq</h3>
+              <p class="date">Aug 2026 — Present</p>
             </div>
-            <p class="project-role">Personal project · Solo developer</p>
+            <p class="project-role">Personal project · Solo Developer</p>
             <p>
               Independently developed and published a mobile number puzzle game,
               covering the whole game development process from core generation system and gameplay to
@@ -236,15 +246,16 @@
             <ul class="contributions">
               <li>
                 <strong>Puzzle generation.</strong>
-                Designed and implemented a custom C++ puzzle generation system,
-                integrated with Godot through GDExtension. The system guarantees
-                each generated puzzle has a solution, supports different difficulty settings
-                and accommodates lots of different rules and special tiles.
+                Designed and implemented a C++ puzzle generator integrated with Godot through
+                GDExtension. It builds boards by reverse construction with a solution proof and
+                fallback mechanics, guaranteeing every puzzle is solvable and generating even complex
+                boards in under 30 ms on average. Supports multiple difficulty settings, 7 special
+                tiles with their own generation rules, and rules for empty tiles and jump patterns.
               </li>
               <li>
                 <strong>Game development.</strong>
                 Implemented gameplay, UI, and animations in GDScript, including
-                procedural animations, rule-wise selection and save system.
+                procedural animations, rule-based selection, and a save system.
               </li>
               <li>
                 <strong>Monetization &amp; publishing.</strong>
@@ -279,20 +290,21 @@
               <h3>tinyrenderer</h3>
               <p class="date">Jun 2026 — Present</p>
             </div>
-            <p class="project-role">Personal project · Developer</p>
+            <p class="project-role">Personal project · Solo Developer</p>
             <p>
               A C++ renderer built with Vulkan and Slang to learn graphics APIs and rendering
               techniques.
             </p>
             <ul class="contributions">
               <li>
-                Built the flexible rendering architecture via render graph with different rendering paths.
+                Built a render graph with automatic resource transitions and acquisition, supporting
+                multiple rendering paths.
               </li>
               <li>
-                Researched and implemented a handful of different rendering techniques.
+                Implemented PBR shading, image-based lighting, shadow mapping, and tone mapping.
               </li>
               <li>
-                Added several 3D models import support.
+                Added GLB, FBX, and OBJ model import.
               </li>
             </ul>
             <p class="stack">
@@ -322,22 +334,23 @@
             <div>
               <dt>Applications &amp; systems</dt>
               <dd>
-                Software architecture, game architecture, complex feature systems, multiplayer, backend integrations
+                Software architecture, game architecture, complex feature systems, multiplayer (Mirror, custom TCP), REST API integration
               </dd>
             </div>
             <div>
               <dt>Performance &amp; graphics</dt>
               <dd>
-                Memory and runtime optimization, rendering, optimal and stable network code
+                Memory and runtime optimization for standalone XR hardware, real-time rendering, efficient and stable network code
               </dd>
             </div>
             <div>
               <dt>Engines &amp; tooling</dt>
-              <dd>Unity, Godot, Unreal, Git, CMake, SQLite, Vulkan, Slang, HLSL</dd>
+              <dd>Proficient: Unity, Godot · Working knowledge: Vulkan, Slang, HLSL</dd>
+              <dd>Tools: Git, CMake, SQLite</dd>
             </div>
             <div>
               <dt>Development practices</dt>
-              <dd>OOP, SOLID, ECS, CI/CD, Agile / Scrum</dd>
+              <dd>OOP, SOLID, ECS, CI/CD, code review, Agile / Scrum</dd>
             </div>
             <div>
               <dt>Design &amp; collaboration</dt>
@@ -355,19 +368,20 @@
                 <h3>Businessman Path</h3>
                 <p class="date">Mar 2026</p>
               </div>
-              <p class="project-role">JetXR · Team lead, game designer &amp; sole programmer</p>
+              <p class="project-role">JetXR · Team lead, game designer &amp; sole developer</p>
               <p>
-                Built a marketing game in one month for promotions exhibitions.
+                Built a Windows marketing game in one month for promotional exhibitions,
+                played by hundreds of visitors.
               </p>
               <ul class="contributions">
                 <li>
-                  Did all programming and game design, and coordinated the team.
+                  Did all programming and game design, and coordinated a team of 6.
                 </li>
                 <li>
-                  Worked directly with the client throughout development and adjusted game to changes in initial description.
+                  Worked directly with the client throughout development and adapted the game to changes in the original brief.
                 </li>
                 <li>
-                  Completed everything on time and met all the client’s requests.
+                  Delivered on time and met all of the client’s requests.
                 </li>
               </ul>
               <p class="stack">
@@ -380,10 +394,11 @@
                 <h3>DreamboothXR</h3>
                 <p class="date">Feb 2024 — Apr 2024</p>
               </div>
-              <p class="project-role">JetXR · Unity developer</p>
+              <p class="project-role">JetXR · Unity Developer</p>
               <p>
-                Built the architecture for branching content in an XR presentation application, and
-                supported demos and client projects.
+                Built the architecture for branching content in an XR presentation application.
+                Created as an exhibition demo, it grew into a separate project that is still
+                in development.
               </p>
               <p class="stack">Unity · C# · XR</p>
               <div class="project-links">
@@ -403,10 +418,11 @@
                 <h3>Stockholm Ride</h3>
                 <p class="date">Feb 2023 — May 2023</p>
               </div>
-              <p class="project-role">JetXR · Unity developer</p>
+              <p class="project-role">JetXR · Unity Developer</p>
               <p>
                 Integrated artist-created scenes, configured rendering and motion-chair features,
-                and implemented the ride path and external controls.
+                and implemented the ride path and external controls for a VR ride deployed in
+                Stockholm.
               </p>
               <p class="stack">Unity · C# · PC VR</p>
               <div class="project-links">
@@ -426,10 +442,10 @@
                 <h3>Morpheus XR</h3>
                 <p class="date">Jul 2022 — Feb 2023</p>
               </div>
-              <p class="project-role">JetXR · Unity developer</p>
+              <p class="project-role">JetXR · Unity Developer</p>
               <p>
-                Contributed features and architecture to a social VR platform, including porting
-                work for Windows and macOS.
+                Contributed features and architecture to a third-party social VR platform and
+                ported it to Windows and macOS.
               </p>
               <p class="stack">Unity · C# · Multiplayer</p>
               <div class="project-links">
@@ -449,10 +465,10 @@
                 <h3>Scheveningen Ride</h3>
                 <p class="date">Mar 2022 — Jul 2022</p>
               </div>
-              <p class="project-role">JetXR · Unity developer</p>
+              <p class="project-role">JetXR · Unity Developer</p>
               <p>
                 Assembled scenes and rendering, integrated motion-chair features, and set up the
-                ride path and external controls for a VR attraction.
+                ride path and external controls for a VR attraction deployed in Scheveningen.
               </p>
               <p class="stack">Unity · C# · PC VR</p>
               <div class="project-links">
@@ -568,8 +584,8 @@
               <p class="project-role">Personal project · Game designer &amp; Game master</p>
               <p>
                 Created a tabletop role-playing system focused on storytelling and flexible game
-                mechanics. Hold a campaign on that system to test and polish ideas. 
-                Currently, second campaign is hold by another person and me as a player.
+                mechanics. Ran a campaign on it to test and polish ideas. A second campaign is now
+                run by another game master, with me as a player.
               </p>
               <p class="stack">TTRPG · System design</p>
               <div class="project-links">
@@ -597,8 +613,8 @@
                 <h3>UnityHelpers</h3>
                 <p class="date">Jan 2026</p>
               </div>
-              <p class="project-role">Personal project · Solo developer</p>
-              <p>Collected my frequently used Unity extensions into reusable helper packages.</p>
+              <p class="project-role">Personal project · Solo Developer</p>
+              <p>Reusable Unity helper packages built from my most frequently used extensions.</p>
               <p class="stack">Unity · C# · Tooling</p>
               <div class="project-links">
                 <a
@@ -617,7 +633,7 @@
                 <h3>PadProject</h3>
                 <p class="date">Mar 2025 — Jul 2025</p>
               </div>
-              <p class="project-role">Personal project · Solo developer</p>
+              <p class="project-role">Personal project · Solo Developer</p>
               <p>
                 A project-anthology about creating platform that combines several solo and multiplayer games. 
                 Used it to learn peer-to-peer networking and how to run different games within one application.
@@ -641,7 +657,7 @@
                 <h3>RenderFeatures</h3>
                 <p class="date">Aug 2023</p>
               </div>
-              <p class="project-role">Personal project · Solo developer</p>
+              <p class="project-role">Personal project · Solo Developer</p>
               <p>
                 A learning project for shader effects and Unity’s Render Features
                 workflow.
@@ -672,7 +688,7 @@
                 <h3>blow up</h3>
                 <p class="date">Aug 2021</p>
               </div>
-              <p class="project-role">Personal project · Solo developer</p>
+              <p class="project-role">Personal project · Solo Developer</p>
               <p>
                 Built and published a mobile game in under a month. 
                 Game's single mechanic is using explosions to move a ball.
