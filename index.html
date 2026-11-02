@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=13">
 
     <script>
       try {
@@ -42,6 +42,28 @@
           NA<span aria-hidden="true">.</span>
       </p>
         <div class="controls" role="group" aria-label="Page controls">
+          <a
+            class="icon-button"
+            href="/cv"
+            aria-label="Open short CV"
+            title="Short CV"
+            onclick="if (location.protocol === 'file:') { event.preventDefault(); location.href = 'cv.html'; }"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 3h7l4 4v14H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/>
+              <path d="M14 3v5h5M9 12h6M9 16h6"/>
+            </svg>
+          </a>
           <button
             id="theme-btn"
             class="icon-button"

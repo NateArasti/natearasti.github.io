@@ -115,7 +115,7 @@ button {
   gap: 10px;
 }
 
-.controls button {
+.controls button, .controls a.icon-button {
   min-height: 44px;
   padding: 8px 15px;
   border: 1px solid var(--border);
@@ -123,9 +123,10 @@ button {
   color: var(--text);
   border-radius: 6px;
   font-size: 13px;
+  text-decoration: none;
 }
 
-.controls .icon-button {
+.controls button.icon-button, .controls a.icon-button {
   width: 44px;
   padding: 0;
   display: grid;
